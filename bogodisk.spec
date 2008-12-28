@@ -1,12 +1,12 @@
 Summary:	Disk Speed Graphs
 Summary(pl.UTF-8):	Wykresy szybkości dysku
 Name:		bogodisk
-Version:	0.5.2
+Version:	0.5.4
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://sweaglesw.com/~djwong/programs/bogodisk/%{name}-%{version}.tar.gz
-# Source0-md5:	cd047128e1c7bb8e1e1f59213523e6d8
+# Source0-md5:	43a17fc39f700999e0339ca5f2cb6c98
 URL:		http://sweaglesw.com/~djwong/programs/bogodisk/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -20,7 +20,6 @@ Narzędzie do pomiaru przepustowości dysku.
 %setup -q
 
 %build
-%configure
 %{__make}
 
 %install
@@ -34,5 +33,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
