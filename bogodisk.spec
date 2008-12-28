@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://sweaglesw.com/~djwong/programs/bogodisk/%{name}-%{version}.tar.gz
 # Source0-md5:	43a17fc39f700999e0339ca5f2cb6c98
+Patch0:		%{name}-as-needed.patch
 URL:		http://sweaglesw.com/~djwong/programs/bogodisk/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -18,9 +19,13 @@ Narzędzie do pomiaru przepustowości dysku.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
