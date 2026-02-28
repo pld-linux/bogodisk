@@ -2,7 +2,7 @@ Summary:	Disk Speed Graphs
 Summary(pl.UTF-8):	Wykresy szybkości dysku
 Name:		bogodisk
 Version:	0.5.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://sweaglesw.com/~djwong/programs/bogodisk/%{name}-%{version}.tar.gz
